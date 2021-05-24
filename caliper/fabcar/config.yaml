@@ -1,0 +1,31 @@
+---
+test:
+  workers:
+    type: local
+    number: 1
+  rounds:
+    - label: Create Car.
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: caliper/fabcar/createCar.js
+# This is an example of one commented line in a YAML file 
+    - label: change Car Owner.
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: caliper/fabcar/aaa.js
+        arguments:
+          assets: 500
+
+
+   
+
+
+
